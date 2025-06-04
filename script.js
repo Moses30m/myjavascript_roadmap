@@ -71,13 +71,18 @@ const banana = {name: "Banana"};
 
 const fruitts = new Map();
 fruitts.set(apples, 300);
-fruitts.set(banana, 400);;
+fruitts.set(banana, 400);;// you can create an object the using that object keys as the key of your map
 
 let total = 0;
 
 for(let y of fruitts.values()){
     console.log(total += y)
 }
+
+
+
+
+
 
 
 
