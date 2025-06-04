@@ -81,11 +81,57 @@ for(let y of fruitts.values()){
 
 
 
+//Remember: the key is an object(apples),not a string("apples");
+// example. fruitts.get("apples"); will return undefine;
 
 
+//Map.groupBy = use for objesct according to string values returned from a callback function
 
+//extra practice
 
+const brothers = new Map([["larry", 400], ["adams",300], ["probity", 500]]);
 
+console.log(brothers.size)
 
+let ccc = 0;
 
+for(let bbb of brothers.values()){
+    console.log(ccc += bbb)
+}
+console.log(brothers.keys());
+console.log(brothers.values());
+console.log(brothers.set("larry", 7000))
+console.log(brothers instanceof Map)
 
+//typeOf Operator = this operator returns the data tyype of a javascript variable;
+
+let name = "moses";
+console.log(typeof name)//this returns string.
+
+//note: null is a primitvie value. However, typeof returns "object".
+
+//Trying to regonize an array using typeof will return an object rather use the following;
+const myArray = ["moses","peter","adams"];
+console.log(Array.isArray(myArray))//true
+
+//instanceof = this returns true if an object is an instance of a specified object type.
+
+console.log(myArray instanceof Array)//true
+
+//undefined; Any variables can be emptied, by setting the value to undefined.
+let car = "benz";
+car = undefined;
+console.log(car)// undefined
+
+//null: null means nothing in js. You can empty an object by setting it to null;
+
+let person = {name:"moses", age:23};
+person = null;
+
+console.log(person)//null
+
+//you can also empty an object by setting it undefined
+
+//null and undefined are equal in value but differnt in type.
+
+console.log(new Date().toString)
