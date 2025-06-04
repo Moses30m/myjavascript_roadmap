@@ -62,5 +62,25 @@ for(const x of newMap.values()){
 }
 
 
+//OBJECT AS KEY.
+
+//Being able to use objects as keys is an important Map feature.
+
+const apples = {name: "Apples"};
+const banana = {name: "Banana"};
+
+const fruitts = new Map();
+fruitts.set(apples, 300);
+fruitts.set(banana, 400);;
+
+let total = 0;
+
+for(let y of fruitts.values()){
+    console.log(total += y)
+}
+
+
+
+
 
 
