@@ -192,8 +192,8 @@ for(const[key,value] of fruits){
 //regular expression can be a single character or a more complicated pattern. /pattern/modifiers;
 /*
 /w3schools/i is a regular expression.
-w3schools from the above examploe is a patter(to be used in a search).
-i is a modifie(modifies the search to be case-insensitive);
+w3schools from the above example is a pattern(to be used in a search).
+i is a modifier(modifies the search to be case-insensitive);
 */
 // regular expression are mostly used in search() and replace();
 
@@ -201,7 +201,7 @@ i is a modifie(modifies the search to be case-insensitive);
 
 let text  = "welcome to school";
 let n = text.search(/school/i)
-console.log(n)//11. Because schools schools starts at index of 11
+console.log(n)//11. Because schools starts at index of 11
 
 //example for replace()
 
@@ -218,17 +218,16 @@ let textt = "visit fulafia"
 let result = textt.match(/fuLAfia/i)
 console.log(result)//returns fulafia
 
-//REGULAR EXPRESSION PATTERNS;
-//[abc] do a global search for any of the character withing the bracker
+            //REGULAR EXPRESSION PATTERNS;
+//[abc] do a global search for any of the character withing the bracket
 let gba = textt.match(/[i]/g);
-console.log(gba)//prints out i, i, i. from our expample text.
+console.log(gba)//prints out i, i, i. from our example text.
 //[0-9] find any of the digits between the brackets;
-let rgg = "1,2,3,4,5,6,,7,8,9";
+let rgg = "1,2,3,4,5,6,7,8,9";
 let rg = rgg.match(/[1-3]/g);
 console.log(rg)//1,2,3;
 
 //(x|y) Find any of the alternative seperated with |;
-
 let aaa = "re, green, red, green, gren, gr, blue, yellow";
 let aa = aaa.match(/(blue|green)/g);
 console.log(aa)//green, green, blue
@@ -238,9 +237,11 @@ console.log(aa)//green, green, blue
 // \d use for finding a digit
 let aba = "Give 100%";
 console.log(aba.match(/\d/g))//1,0,0. Searches for all digits;
+
 // \s find a whitespace character
-let gag = "Is this al there is?";
+let gag = "Is this all there is?";
 console.log(gag.match(/\s/g))//"", "","","";
+
 // \b Find a match at the begining of a word 
 let lal =  "HELLO, LOOK AT YOU";;
 console.log(lal.match(/\bLO/))//LO is found at indext 7;
@@ -250,17 +251,106 @@ console.log(lal.match(/\bLO/))//LO is found at indext 7;
 //n+ : matches any string that contains at least one n;
 let yyy = "Hellooo World, Hello w3Schools";
 console.log(yyy.match(/o+/g))// ooo, o, o, oo.
+
 //n* : matches any string that contains zero or more occurences of n
 console.log(yyy.match(/lo*/g))//l , looo, l, l, lo, l
+
 //n? matches any string that contains zero or one occurrences of n
 let zaa = "1,100,or 1000";
 console.log(zaa.match(/10?/g))//1, 10 , 10;
-//using test() : In JavaScript, the regExp object is a regular expression object with predefined properties and methods
 
+//using test() : In JavaScript, the regExp object is a regular expression object with predefined properties and methods
 let mom = "The best things in life are free";
 let patter = /e/;
 console.log(patter.test(mom))//true because there is "e" in the following sentence;
 //we can also use /e/.test("The best things in life are free")
 n
 //Using exec() : this searches for string in a specified pattern, and returns the found text as an object
-// /e/.exec("The best things in life are free")// the second index
+// /e/.exec("The best things in life are free")// the second index 2
+
+
+
+//Javascript errors
+//try : statement defines a code block to run(to try);
+//catch : statemnt defines a code block to handle any error;
+//finally statemnt defines a code block to run regardless of the  result.
+// throw statement defines a custom error.
+
+try{
+    consall.lag("hello")//error
+}
+catch(err){
+    console.log(err)//this will display error but won't affect your code
+}
+/*
+you can display ur own message by
+catch(){
+console.log("there was an erro")}
+*/
+finally{
+    console.log("welcome")//displays this message regardless of if there is an error or not
+}
+//throw statement allows you to create a custom erro. Technically you can throw an exception. it can be in Number, a Boolean or an Object.
+let grade;
+try{
+    if(grade == "" || grade == null) throw "empty string"//displays this if the input is empty
+    if(isNaN(grade)) throw "not a number"//displays this if the input is not a number
+    else{
+        console.log(grade)
+    }
+}
+catch(err){
+    console.log(err)
+}
+
+//ERROR OBJECT
+// Javascript has a built in error object that provides error information when an erro occurs. The error object provides two useful properties: name and message
+//Error object Properties
+//name : sets or returns an error name.
+//message : Sets or returns an erro message(a string);
+
+//Error Name values: the are six different values can be returned by the error name property.
+//EvalError : An error has occurred in the eval() function. But this is no longer used in newer version of javascript.
+
+//RangeError : is thrown if you use a number that is outside the range of legal values
+let num = 1;
+try{
+    num.toPrecision(500)
+}
+catch(err){
+    console.log(err.name)//RangeError
+}
+
+//ReferenceError : is thrown if you use(reference)a variable that has not been declared.
+let afa = 6;
+try {
+    afa = y + 1
+}
+catch(err){
+    console.log(err.name)//ReferenceError
+}
+
+//SyntaxError : is thrown if you try to evaluate code with a syntax error.
+try{
+    eval("alert('hello)")
+}
+catch(err){
+    console.log(err.name)//SyntaxError
+}
+
+//TypeError : is thrown if an operand or argument is imcompatible with the type expected by an operator or function
+let tyt = 1;
+try{
+    tyt.toUpperCase()
+}
+catch(errr){
+    console.log(errr.name)
+}
+
+//URIError is thrown if you use illegal characters in URI function.
+try{
+    decodeURI("%%%")
+}
+catch(err){
+    console.log(err.name)//URIError
+}
